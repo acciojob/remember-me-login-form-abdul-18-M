@@ -1,44 +1,44 @@
-//your JS code here. If required.
-const form =document.querySelector("#form");
-const username =document.querySelector("#username");
-const password =document.querySelector("#password");
-const checkbox =document.querySelector("#checkbox");
-const existing =document.querySelector("#existing");
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("#form");
+    const username = document.querySelector("#username");
+    const password = document.querySelector("#password");
+    const checkbox = document.querySelector("#checkbox");
+    const existing = document.querySelector("#existing");
 
-const savedUsername = localStorage.getItem("username");
-const savedPassword = localStorage.getItem("password");
+    
+    const savedUsername = localStorage.getItem("username");
+    const savedPassword = localStorage.getItem("password");
 
-if(savedUsername && savedPassword){
-	existing.style.display="block";
-}
-else{
-	existing.style.display="none";
-}
-form.addEventListener("submit",(evt)=>{
-	evt.preventDefault()
+    if (savedUsername && savedPassword) {
+        existing.style.display = "block";
+    } else {
+        existing.style.display = "none";
+    }
 
-	const user = username.value
-	const pass = password.value
-	alert(`Logged in as ${user}`)
+    form.addEventListener("submit", (evt) => {
+        evt.preventDefault();
 
-	if(checkbox.checked){
-		localStorage.setItem("username",user);
-		localStorage.setItem("password",pass);
+        const user = username.value;
+        const pass = password.value;
 
-		existing.style.display = "block"
-	}
-	else{
-		localStorage.removeItem("username")
-		localStorage.removeItem("password")
+        alert(`Logged in as ${user}`);
 
-		existing.style.display = "none"
-	}
+        if (checkbox.checked) {
+            localStorage.setItem("username", user);
+            localStorage.setItem("password", pass);
+
+            existing.style.display = "block";
+        } else {
+            localStorage.removeItem("username");
+            localStorage.removeItem("password");
+
+            existing.style.display = "none";
+        }
+    });
+
+    existing.addEventListener("click", () => {
+        const savedUsername = localStorage.getItem("username");
+
+        alert(`Logged in as ${savedUsername}`);
+    });
 });
-
-existing.addEventListener("click",()=>{
-	const savedUsername = localStorage.getItem("username");
-
-	alert(`Logged in as ${savedUsername}`)
-})
-
-

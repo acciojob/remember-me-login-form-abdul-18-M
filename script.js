@@ -9,10 +9,10 @@ const savedUsername = localStorage.getItem("username");
 const savedPassword = localStorage.getItem("password");
 
 if(savedUsername && savedPassword){
-	existing.style.display="block"
+	existing.style.display="block";
 }
 else{
-	existing.style.display="none"
+	existing.style.display="none";
 }
 form.addEventListener("submit",(evt)=>{
 	evt.preventDefault()

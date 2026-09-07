@@ -1,5 +1,5 @@
 //your JS code here. If required.
-const forms =document.querySelector("#form");
+const form =document.querySelector("#form");
 const username =document.querySelector("#username");
 const password =document.querySelector("#password");
 const checkbox =document.querySelector("#checkbox");
@@ -14,7 +14,7 @@ if(savedUsername && savedPassword){
 else{
 	existing.style.display="none"
 }
-forms.addEventListener("submit",(evt)=>{
+form.addEventListener("submit",(evt)=>{
 	evt.preventDefault()
 
 	const user = username.value

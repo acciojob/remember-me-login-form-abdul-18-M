@@ -31,7 +31,7 @@ forms.addEventListener("submit",(evt)=>{
 		localStorage.removeItem("username")
 		localStorage.removeItem("password")
 
-		existing.style.dispay = "none"
+		existing.style.display = "none"
 	}
 });
 
